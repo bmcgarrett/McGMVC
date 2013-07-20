@@ -28,5 +28,14 @@ namespace McGMVC.Controllers
 
             return View();
         }
+
+        public ActionResult MyPage()
+        {
+            ViewBag.Message = "This is my page";
+
+            return View("Brendan");
+        }
+
+
     }
 }
