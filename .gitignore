@@ -1,6 +1,5 @@
 # visual studio
 obj/
-[Bb]in
 [Dd]ebug*/
 [Rr]elease*/
 *.sln.cache
