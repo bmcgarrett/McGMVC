@@ -3,30 +3,46 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using McGMVC.DAL;
 using McGMVC.Models;
+using MongoDB.Driver;
+
 
 namespace McGMVC.Controllers
 {
-    public class MongoController : Controller
+    public class MongoController : Controller, IDisposable
     {
+        private mongoBooks.Dal dal = new mongoBooks.Dal();
+        private bool disposed = false;
         //
         // GET: /Mongo/
 
         public ActionResult Index()
         {
-            var model1 = new Book();
-            model1._id = 08898933;
-            model1.Title = "Node.JS in Action";
-            model1.Author = "McGarrett, Brendan";
-            var model2 = new Book();
-            model2._id = 08523424;
-            model2.Title = "SharePoint 2013";
-            model2.Author = "Doe, John";
-            var books = new List<Book>();
-            books.Add(model1);
-            books.Add(model2);
-            return View(books);
+            return View(dal.GetAllBooks());
         }
 
+        #region IDisposable
+        new protected void Dispose()
+        {
+        this.Dispose(true);
+        GC.SuppressFinalize(this);
+        }
+
+
+        new protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    this.dal.Dispose();
+                }
+            }
+            this.disposed = true;
+        }
+
+
+        #endregion
     }
 }
