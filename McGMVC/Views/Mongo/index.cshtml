@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "index.cshtml";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            var counter = 1;
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@counter</td>
+                    <td>@item.Title</td>
+                    <td>@item.Author</td>
+                </tr>
+                counter++;
+            }
+        }
+    </tbody>
+</table>
