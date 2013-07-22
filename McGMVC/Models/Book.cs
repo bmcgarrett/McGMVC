@@ -9,13 +9,7 @@ namespace McGMVC.Models
     public class Book
     {
         public int _id { get; set; }
-        public string Title { get; set; }
-        public string Author { get; set; }
+        public string title { get; set; }
+        public string author { get; set; }
     }
-
-    public class BookDBContext : DbContext
-    {
-        public DbSet<Book> Books { get; set; }
-    }
-
 }
