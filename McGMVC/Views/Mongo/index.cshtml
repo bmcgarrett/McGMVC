@@ -1,14 +1,17 @@
 ﻿@model IEnumerable<McGMVC.Models.Book>
 @{
-    ViewBag.Title = "index.cshtml";
+    ViewBag.Title = "MongoDB";
 }
 
-<table class="table">
+<div id="tableContainer">
+<table class="table table-bordered table-hover">
     <thead>
         <tr>
+            <th></th>
             <th>ID</th>
             <th>Title</th>
             <th>Author</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -17,12 +20,16 @@
             foreach (var item in Model)
             {
                 <tr id="@item._id">
+                    <td class="tableButtons"><button class="btn btn-danger" type="button">Delete</button></td>
                     <td>@counter</td>
                     <td>@item.title</td>
                     <td>@item.author</td>
+                    <td class="tableButtons"><button class="btn" type="button">Edit</button></td>
                 </tr>
                 counter++;
             }
         }
     </tbody>
 </table>
+<button class="btn" type="button">Add Book</button>
+</div>

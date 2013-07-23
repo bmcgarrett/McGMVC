@@ -25,9 +25,10 @@ namespace McGMVC
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/bootstrap/css/bootstrap.css"));
+            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/bootstrap/css/bootstrap.css","~/Content/bootstrap/css/retriever.css"));
 
             bundles.Add(new StyleBundle("~/Content/appcss").Include("~/Content/app/css/styles.css"));
+           
 
            
         }

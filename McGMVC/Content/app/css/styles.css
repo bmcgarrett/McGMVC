@@ -5,3 +5,14 @@
 #footerCenter {
     margin-left: 40%;
 }
+
+.tableButtons {
+    width: 30px;
+}
+
+#tableContainer {
+    width: 940px;
+    margin-right: auto;
+    margin-left: auto;
+}
+

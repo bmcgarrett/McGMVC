@@ -15,9 +15,9 @@ namespace McGMVC.DAL
             private bool disposed = false;
 
 
-            private string connectionString = System.Environment.GetEnvironmentVariable("CUSTOMCONNSTR_MONGO");
+            //private string connectionString = System.Environment.GetEnvironmentVariable("CUSTOMCONNSTR_MONGO");
 
-            //private string connectionString = @"mongodb://brendan:admin@widmore.mongohq.com:10010/bmacusers";
+            private string connectionString = @"mongodb://brendan:admin@widmore.mongohq.com:10010/bmacusers";
 
             private string dbName = "bmacusers";
             private string collectionName = "learn";
