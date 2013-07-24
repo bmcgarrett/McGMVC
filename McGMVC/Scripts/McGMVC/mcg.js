@@ -8,7 +8,7 @@ $(document).ready(function() {
         var myBookTitle = $('#bookTitleInput').val();
         var myBookAuthor = $('#bookAuthorInput').val();
         $.get("/mongo/add", { title: myBookTitle, author: myBookAuthor }).done(function() {
-            window.location = "/mongo";
+            window.location.reload(true);
         });
     });
 });
