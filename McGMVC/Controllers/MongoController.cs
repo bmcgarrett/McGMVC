@@ -22,6 +22,20 @@ namespace McGMVC.Controllers
             return View(dal.GetAllBooks());
         }
 
+        [HttpGet]
+        public ActionResult Add(Book book)
+        {
+            try
+            {
+                dal.CreateBook(book);
+                return View(dal.GetAllBooks());
+            }
+            catch
+            {
+                return View(dal.GetAllBooks());
+            }
+        }
+
         #region IDisposable
         new protected void Dispose()
         {
