@@ -15,7 +15,7 @@ h2, h3, h4, h5 {
 .navbar-inner {
 	padding-top:10px;
 	filter: none;
-	background-image: url('../images/stich.png');
+	background-image: url('../img/stich.png');
 	background-repeat: repeat-x;
 	height:49px;
 }
