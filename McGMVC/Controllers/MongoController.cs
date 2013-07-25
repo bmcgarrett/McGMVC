@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using McGMVC.DAL;
 using McGMVC.Models;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 
@@ -28,7 +29,22 @@ namespace McGMVC.Controllers
             try
             {
                 dal.CreateBook(book);
+                return RedirectToAction("Index");
+            }
+            catch
+            {
                 return View(dal.GetAllBooks());
+            }
+        }
+
+        [HttpGet]
+        public ActionResult Delete(string id)
+        {
+            try
+            { 
+                var myBookID = new ObjectId(id);
+                dal.DeleteBook(myBookID);
+                return RedirectToAction("Index");
             }
             catch
             {

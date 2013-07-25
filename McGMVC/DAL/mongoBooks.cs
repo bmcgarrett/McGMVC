@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using McGMVC.Models;
+using MongoDB.Bson;
 using MongoDB.Driver;
+using MongoDB.Driver.Builders;
 
 namespace McGMVC.DAL
 {
@@ -51,6 +53,20 @@ namespace McGMVC.DAL
                 try
                 {
                     collection.Insert(book, SafeMode.True);
+                }
+                catch (MongoCommandException ex)
+                {
+                    string msg = ex.Message;
+                }
+            }
+
+            public void DeleteBook(ObjectId bookId)
+            {
+                MongoCollection<Book> collection = getBooksCollectionForEdit();
+                try
+                {
+                    var query = Query.EQ("_id", bookId);
+                    collection.Remove(query);
                 }
                 catch (MongoCommandException ex)
                 {
