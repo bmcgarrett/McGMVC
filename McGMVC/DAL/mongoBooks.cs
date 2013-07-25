@@ -74,6 +74,23 @@ namespace McGMVC.DAL
                 }
             }
 
+            public void EditBook(ObjectId bookId, Book book)
+            {
+                MongoCollection<Book> collection = getBooksCollectionForEdit();
+                try
+                {
+                    var query = Query.EQ("_id", bookId);
+                    
+                    var update = Update.Set("title", book.title)
+                    .Set("author", book.author);
+                    collection.Update(query, update);
+                }
+                catch (MongoCommandException ex)
+                {
+                    string msg = ex.Message;
+                }
+            }
+
 
             private MongoCollection<Book> GetBooksCollection()
             {

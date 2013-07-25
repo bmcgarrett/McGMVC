@@ -52,6 +52,21 @@ namespace McGMVC.Controllers
             }
         }
 
+        [HttpGet]
+        public ActionResult Edit(Book book, string id)
+        {
+            try
+            {
+                var myBookID = new ObjectId(id);
+                dal.EditBook(myBookID,book);
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View(dal.GetAllBooks());
+            }
+        }
+
         #region IDisposable
         new protected void Dispose()
         {
