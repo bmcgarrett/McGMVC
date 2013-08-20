@@ -189,8 +189,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\EFController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MongoController.cs" />
+    <Compile Include="DAL\BookContext.cs" />
     <Compile Include="DAL\mongoBooks.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -242,6 +244,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Home\Brendan.cshtml" />
     <Content Include="Views\Mongo\index.cshtml" />
+    <Content Include="Views\EF\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

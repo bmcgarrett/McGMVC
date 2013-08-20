@@ -176,3 +176,4 @@ C:\Users\Brendan\Documents\Visual Studio 11\Projects\McGMVC\McGMVC\bin\MongoDB.B
 C:\Users\Brendan\Documents\Visual Studio 11\Projects\McGMVC\McGMVC\bin\MongoDB.Driver.dll
 C:\Users\Brendan\Documents\Visual Studio 11\Projects\McGMVC\McGMVC\bin\MongoDB.Bson.xml
 C:\Users\Brendan\Documents\Visual Studio 11\Projects\McGMVC\McGMVC\bin\MongoDB.Driver.xml
+C:\Users\bmcgarr\Documents\Visual Studio 2012\Projects\McGMVC\McGMVC\bin\McGMVC.dll.config
