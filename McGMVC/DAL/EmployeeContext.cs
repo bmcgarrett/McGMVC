@@ -7,7 +7,7 @@ using System.Web;
 
 namespace McGMVC.DAL
 {
-    public class EmployeeContext :DbContext
+    public class EmployeeContext : DbContext
     {
         public DbSet<Employee> Employees { get; set; }
     }

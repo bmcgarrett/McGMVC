@@ -8,11 +8,13 @@ using System.Web.Mvc;
 using McGMVC.Models;
 using McGMVC.DAL;
 
+
 namespace McGMVC.Controllers
 {
     public class EmployeeController : Controller
     {
         private EmployeeContext db = new EmployeeContext();
+        private EmployeeQueries dalOfEmployee = new EmployeeQueries();
 
         //
         // GET: /Employee/
@@ -20,19 +22,6 @@ namespace McGMVC.Controllers
         public ActionResult Index()
         {
             return View(db.Employees.ToList());
-        }
-
-        //
-        // GET: /Employee/Details/5
-
-        public ActionResult Details(int id = 0)
-        {
-            Employee employee = db.Employees.Find(id);
-            if (employee == null)
-            {
-                return HttpNotFound();
-            }
-            return View(employee);
         }
 
         //
@@ -113,6 +102,15 @@ namespace McGMVC.Controllers
             db.Employees.Remove(employee);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        //
+        // GET: /Employee/BNames
+
+        public ActionResult BNames()
+        {
+            var employees = dalOfEmployee.NamesWithB(db);
+            return View(employees);
         }
 
         protected override void Dispose(bool disposing)

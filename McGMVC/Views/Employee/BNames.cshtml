@@ -1,0 +1,56 @@
+﻿@model IEnumerable<McGMVC.Models.Employee>
+
+@{
+    ViewBag.Title = "BNames";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@section maincontent {
+
+    <h2>Names Starting with B</h2>
+
+
+
+
+   <table class="employee-table table table-striped table-bordered">
+    <tr>
+        <th>
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            Edit
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td id="delRow">
+                @Html.ActionLink("X", "Delete", new { id = item.idNumber }, htmlAttributes: new { @class = "btn btn-danger" })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.idNumber }, htmlAttributes: new { @class = "btn btn-primary" })
+
+            </td>
+        </tr>
+    }
+
+</table>
+
+@Html.ActionLink("Create New", "Create", null, htmlAttributes: new { @class = "btn btn-primary" })
+
+}

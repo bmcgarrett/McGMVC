@@ -193,6 +193,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MongoController.cs" />
     <Compile Include="DAL\EmployeeContext.cs" />
+    <Compile Include="DAL\EmployeeQueries.cs" />
     <Compile Include="DAL\mongoBooks.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -245,12 +246,11 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Home\Brendan.cshtml" />
     <Content Include="Views\Mongo\index.cshtml" />
-    <Content Include="Views\EF\index.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
-    <Content Include="Views\Employee\Details.cshtml" />
     <Content Include="Views\Employee\Create.cshtml" />
     <Content Include="Views\Employee\Edit.cshtml" />
     <Content Include="Views\Employee\Delete.cshtml" />
+    <Content Include="Views\Employee\BNames.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
