@@ -16,3 +16,10 @@
     margin-left: auto;
 }
 
+#container {
+    padding-left: 20px;
+}
+
+#delRow {
+    width:20px;
+}

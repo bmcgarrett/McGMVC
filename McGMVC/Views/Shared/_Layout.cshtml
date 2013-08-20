@@ -22,6 +22,7 @@
                         <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
                         <li>@Html.ActionLink("About","About","Home")</li>
                         <li>@Html.ActionLink("Mongo","Index","Mongo")</li>
+                        <li>@Html.ActionLink("Employees","Index","Employee")</li>
                     </ul>
                 </div>
            </div>
@@ -31,6 +32,9 @@
             <section class="content-wrapper main-content clear-fix">
                 @RenderBody()
             </section>
+            <div id="container">
+                @RenderSection("maincontent", required: false)
+            </div>
         </div>
         <footer>
             <div class="navbar navbar-fixed-bottom">

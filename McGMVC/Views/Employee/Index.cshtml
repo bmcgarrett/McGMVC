@@ -1,27 +1,37 @@
 ﻿@model IEnumerable<McGMVC.Models.Employee>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Employees";
 }
 
-<h2>Index</h2>
+@section maincontent {
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
+<h2>Employees</h2>
+
+
+    
+
+<table class="employee-table table table-striped table-bordered">
     <tr>
+        <th>
+            
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.FirstName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.LastName)
         </th>
-        <th></th>
+        <th>
+            Edit
+        </th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+        <td id="delRow">
+            @Html.ActionLink("X", "Delete", new { id = item.idNumber }, htmlAttributes: new { @class = "btn btn-danger" })
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.FirstName)
         </td>
@@ -29,11 +39,14 @@
             @Html.DisplayFor(modelItem => item.LastName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idNumber }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idNumber }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idNumber })
+            @Html.ActionLink("Edit", "Edit", new { id = item.idNumber }, htmlAttributes: new { @class = "btn btn-primary" })
+            
         </td>
     </tr>
 }
 
 </table>
+
+@Html.ActionLink("Create New", "Create", null, htmlAttributes: new { @class = "btn btn-primary" })
+    
+}
